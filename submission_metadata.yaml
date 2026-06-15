@@ -1,0 +1,61 @@
+# Redrob Hackathon — Submission Metadata
+
+team_name: "swathi-redrob-ranker"
+
+primary_contact:
+  name: "Swathi Sivaraman"
+  email: "swathisivaraman11@gmail.com"
+  phone: "+91-XXXXXXXXXX"  # fill your number here
+
+team_members:
+  - name: "Swathi Sivaraman"
+    email: "swathisivaraman11@gmail.com"
+    role: "Solo Participant"
+
+github_repo: "https://github.com/swathisivaraman1106-del/redrob-ranker"
+
+sandbox_link: "https://huggingface.co/spaces/swathisivaraman1106-del/redrob-ranker"
+# We'll update this after deploying to HuggingFace Spaces
+
+reproduce_command: "python rank.py"
+
+compute:
+  platform: "Windows PC"
+  cpu_cores: 16
+  ram_gb: 16
+  python_version: "3.11"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "Claude"
+
+ai_usage_summary: |
+  Used Claude for architecture discussion, code review, and debugging.
+  No candidate data was fed to any LLM. All ranking logic and scoring
+  decisions are original work.
+
+methodology_summary: |
+  Multi-signal candidate ranking pipeline with 5 scoring components.
+  Title score (35%) is the primary signal against keyword-stuffer traps —
+  candidates with irrelevant titles like HR Manager or Accountant are
+  penalized even with strong AI skill lists. Skills score (20%) uses
+  keyword matching with proficiency weights and honeypot detection
+  (expert-level skills with 0 months experience are ignored). Career
+  score (20%) rewards product company experience and penalizes pure
+  services-company backgrounds (TCS, Infosys, Wipro etc.) per JD
+  requirements, combined with experience range fit (5-9 years ideal).
+  Behavioral score (15%) uses Redrob signals — recency, open-to-work
+  flag, recruiter response rate, notice period, and interview completion
+  rate. Semantic score (10%) uses sentence-transformers (all-MiniLM-L6-v2)
+  to measure profile-JD semantic similarity beyond keyword overlap.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
