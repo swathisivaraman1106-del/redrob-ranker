@@ -14,8 +14,7 @@ team_members:
 
 github_repo: "https://github.com/swathisivaraman1106-del/redrob-ranker"
 
-sandbox_link: "https://huggingface.co/spaces/swathisivaraman1106-del/redrob-ranker"
-# We'll update this after deploying to HuggingFace Spaces
+sandbox_link: "https://redrob-matchmaker.streamlit.app"
 
 reproduce_command: "python rank.py"
 
